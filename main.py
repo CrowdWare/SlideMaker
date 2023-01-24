@@ -72,8 +72,10 @@ for file in image_files:
     for i in range(30):
         alpha = (30 - i) / 30
         img_fade = paste_image(bg.copy(), img, posx, posy, alpha)
+        img_with_right_shadow = paste_image(img_fade, right_shadow_blurred, posx + new_width, posy + shadow_distance, 0.5 * alpha)
+        img_with_all_shadows = paste_image(img_with_right_shadow, lower_shadow_blurred, posx + shadow_distance, posy + new_height, 0.5 * alpha)
         name = "img" + str(frame) + ".jpg"
-        cv2.imwrite(name, img_fade)
+        cv2.imwrite(name, img_with_all_shadows)
         image_list.append(name)
         frame += 1
 
