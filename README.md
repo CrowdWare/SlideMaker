@@ -6,6 +6,11 @@ Create a folder with the name **images** and copy all images into this folder wh
 Copy a background image (wall, wood, or whatever) to the root directory of this project.
 
 ## Run
+Simple fadein/out transition
 ```console
-python main.py
+python fade.py
+```
+If you have got faces and want a morph transition
+```console
+python morph.py
 ```
